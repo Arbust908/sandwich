@@ -1899,10 +1899,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'NavBar',
   data: function data() {
@@ -37366,65 +37362,72 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "navbar navbar-expand-md navbar-light bg-white shadow-sm" },
+    { staticClass: "w-full flex justify-between bg-white shadow px-2 py-3" },
     [
-      _c("div", { staticClass: "container" }, [
-        _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-          _vm._v(
-            "\n                " + _vm._s(_vm.config.name) + "\n            "
-          )
-        ]),
-        _vm._v(" "),
+      _c("section", { staticClass: "flex items-center" }, [
         _vm._m(0),
         _vm._v(" "),
         _c(
-          "div",
+          "a",
           {
-            staticClass: "collapse navbar-collapse",
-            attrs: { id: "navbarSupportedContent" }
+            staticClass: "uppercase font-mono text-purple-600 px-2 ",
+            attrs: { href: "/" }
           },
-          [
-            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-              !_vm.user
-                ? _c("li", [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/login " } },
-                      [_vm._v(" Login ")]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              !_vm.user && _vm.canRegister
-                ? _c("li", [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/register" } },
-                      [_vm._v(" Register ")]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.user
-                ? _c("li", [
-                    _c("a", [
-                      _vm._v(
-                        "\n                            @" +
-                          _vm._s(_vm.user.name) +
-                          "\n                            "
-                      ),
-                      _c("img", {
-                        attrs: {
-                          src: "/img/icons/ChevronDown2x.png",
-                          alt: "down Chevron"
-                        }
-                      })
-                    ])
-                  ])
-                : _vm._e()
-            ])
-          ]
+          [_vm._v("\n            " + _vm._s(_vm.config.name) + "\n        ")]
         )
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "flex justify-around items-center" }, [
+        !_vm.user
+          ? _c(
+              "li",
+              {
+                staticClass:
+                  "pl-2 hover:underline hover:text-purple-600 text-sm"
+              },
+              [_c("a", { attrs: { href: "/login " } }, [_vm._v(" Login ")])]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.user && _vm.canRegister
+          ? _c(
+              "li",
+              {
+                staticClass:
+                  "pl-2 hover:underline hover:text-purple-600 text-sm"
+              },
+              [
+                _c("a", { attrs: { href: "/register" } }, [
+                  _vm._v(" Register ")
+                ])
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.user
+          ? _c(
+              "li",
+              {
+                staticClass:
+                  "pl-2 hover:underline hover:text-purple-600 text-sm"
+              },
+              [
+                _c("a", [
+                  _vm._v(
+                    "\n                @" +
+                      _vm._s(_vm.user.name) +
+                      "\n                "
+                  ),
+                  _c("img", {
+                    attrs: {
+                      src: "/img/icons/ChevronDown2x.png",
+                      alt: "down Chevron"
+                    }
+                  })
+                ])
+              ]
+            )
+          : _vm._e()
       ])
     ]
   )
@@ -37436,7 +37439,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("button", [
       _c("img", {
-        attrs: { src: "/img/icons/MenuLines2x.png ", alt: "hambuerger menu" }
+        attrs: { src: "/img/icons/MenuLines.png ", alt: "hambuerger menu" }
       })
     ])
   }

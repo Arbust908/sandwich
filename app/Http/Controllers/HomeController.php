@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -24,5 +24,23 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function artisan()
+    {
+        return view('base.artisan');
+    }
+
+    public function artisanMaker(Request $request)
+    {
+        dd($request->all());
+        $prints = [];
+        $models = explode(', ',$request->input('models'));
+        //dd($models);
+        foreach ($models as $model) {
+            $prints[$model] = 'php artisan make:model ' . ucfirst($model) . ' -a && php artisan make:resource ' . ucfirst($model) . ' && php artisan make:resource '. ucfirst($model) .'Collection';
+        }
+        return view('base.maker')
+            ->with('models', $prints);
     }
 }
